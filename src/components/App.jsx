@@ -20,6 +20,21 @@ export class App extends Component {
     });
   };
 
+  countTotalFeedback = () => {
+    // const totalFeedback = this.state.good + this.state.neutral + this.state.bad;
+    const { good, neutral, bad } = this.state;
+    const total = good + neutral + bad;
+
+    return total;
+  };
+
+  countPositiveFeedbackPercentage = () => {
+    const total = this.countTotalFeedback();
+    const good = this.state.good;
+    const result = Math.round((good / total) * 100);
+    return !total ? 0 : result;
+  };
+
   render() {
     return (
       <div className="">
@@ -34,25 +49,11 @@ export class App extends Component {
             good={this.state.good}
             neutral={this.state.neutral}
             bad={this.state.bad}
+            total={this.countTotalFeedback()}
+            positivePercentageFeedback={this.countPositiveFeedbackPercentage()}
           />
         </Section>
       </div>
-      //  <button type="button" onClick={this.LeaveFeedbackClick}>
-      //   Good
-      // </button>
-      // <button type="button" onClick={this.LeaveFeedbackClick}>
-      //   Neutral
-      // </button>
-      // <button type="button" onClick={this.LeaveFeedbackClick}>
-      //   Bad
-      // </button>
-
-      // <h2>Statistics</h2>
-      // <ul>
-      //   <li>Good:{this.state.good}</li>
-      //   <li>Neutral:{this.state.neutral}</li>
-      //   <li>Bad:{this.state.bad}</li>
-      // </ul>
     );
   }
 }
