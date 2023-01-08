@@ -3,9 +3,7 @@ import Section from './Section';
 import Statistics from './Statistics';
 import FeedbackOptions from './FeedbackOptions';
 import Notification from './Notification';
-// import { FaReact, FaGrimace  FaGrimace, FaGrinHearts, FaGrinBeamSweat} from 'react-icons/fa';
-
-// console.log(FeedbackOptions);
+import { Container } from './App.styled';
 
 const options = ['good', 'neutral', 'bad'];
 
@@ -40,7 +38,7 @@ export class App extends Component {
   render() {
     const total = this.countTotalFeedback();
     return (
-      <div className="">
+      <Container className="">
         <Section title="Please leave your feedback">
           <FeedbackOptions
             options={options}
@@ -61,7 +59,7 @@ export class App extends Component {
             />
           )}
         </Section>
-      </div>
+      </Container>
     );
   }
 }

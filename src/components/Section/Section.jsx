@@ -1,15 +1,15 @@
 import PropTypes from 'prop-types';
-import css from './Section.module.css';
 import { FaCheck } from 'react-icons/fa';
+import { SectionSt, Title } from './Section.styled';
 
 const Section = ({ title, children }) => {
   return (
-    <section className={css.section}>
-      <h2 className={css.title}>
+    <SectionSt>
+      <Title>
         <FaCheck size="20px" color="blue" /> {title}
-      </h2>
+      </Title>
       {children}
-    </section>
+    </SectionSt>
   );
 };
 Section.propTypes = {
