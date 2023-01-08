@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import css from './Statistics.module.css';
+import { FaGrimace, FaGrinHearts, FaGrinBeamSweat } from 'react-icons/fa';
 
 const Statistics = ({
   good,
@@ -10,9 +11,18 @@ const Statistics = ({
 }) => {
   return (
     <div className={css.statistics}>
-      <li>Good: {good}</li>
-      <li>Neutral: {neutral}</li>
-      <li>Bad: {bad}</li>
+      <li>
+        <FaGrinHearts className={css.icon} size="15px" color="orange" />
+        Good: {good}
+      </li>
+      <li>
+        <FaGrinBeamSweat className={css.icon} size="15px" color="green" />
+        Neutral: {neutral}
+      </li>
+      <li>
+        <FaGrimace className={css.icon} size="15px" color="red" />
+        Bad: {bad}
+      </li>
       <li>Total: {total}</li>
       <li>Positive Feedback:{positivePercentageFeedback}%</li>
     </div>

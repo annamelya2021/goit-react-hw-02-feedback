@@ -3,6 +3,7 @@ import Section from './Section';
 import Statistics from './Statistics';
 import FeedbackOptions from './FeedbackOptions';
 import Notification from './Notification';
+// import { FaReact, FaGrimace  FaGrimace, FaGrinHearts, FaGrinBeamSweat} from 'react-icons/fa';
 
 // console.log(FeedbackOptions);
 
