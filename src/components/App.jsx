@@ -5,8 +5,6 @@ import FeedbackOptions from './FeedbackOptions';
 import Notification from './Notification';
 import { Container } from './App.styled';
 
-const options = ['good', 'neutral', 'bad'];
-
 export class App extends Component {
   state = {
     good: 0,
@@ -21,7 +19,6 @@ export class App extends Component {
   };
 
   countTotalFeedback = () => {
-    // const totalFeedback = this.state.good + this.state.neutral + this.state.bad;
     const { good, neutral, bad } = this.state;
     const total = good + neutral + bad;
 
@@ -41,7 +38,7 @@ export class App extends Component {
       <Container className="">
         <Section title="Please leave your feedback">
           <FeedbackOptions
-            options={options}
+            options={Object.keys(this.state)}
             LeaveFeedbackFn={this.LeaveFeedbackFn}
           />
         </Section>
